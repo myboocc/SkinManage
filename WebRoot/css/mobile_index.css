@@ -1,0 +1,414 @@
+html,body{width: 100%;height: 100%;}
+body{
+	background: #fff;
+}
+
+#active_wrap{
+	width: 100%;
+	/*height: 100%;*/
+	max-width: 640px;
+	font-size: 14px;
+	font-family: "微软雅黑","microsoft yahei",arial;
+	overflow-x: hidden;
+}
+
+/*top-wrap 顶部*/
+.top-wrap{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../images/mobile/top_bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	
+}
+
+.top-wrap .top-nav{
+	position: absolute;
+	width: 60%;
+	height: 80%;
+	/*border: 1px solid #008CFF;*/
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+.top-wrap .top-nav li{
+	margin-bottom: 10%;
+	text-align: center;
+}
+.top-wrap .top-nav li:first-child img{
+	width: 100%;
+}
+.top-wrap .top-nav li a{
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.middle-content,.middle-content img{
+	width: 100%;
+}
+
+.project-content{
+	width: 98%;
+	margin: 0 auto;
+}
+.project-content ul li{
+	position: relative;
+	float: left;
+	width: 25%;
+}
+.project-content ul li img{
+	width: 100%;
+}
+.project-content ul li div{
+	box-sizing: border-box;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.8);
+	text-align: left;
+	color: #fff;
+	font-size: 0.8rem;
+	padding: 1px 2px;
+}
+
+.download-content,.download-joinMaum{
+	width: 100%;
+	text-align: center;
+	padding-top: 2%;
+}
+.download-content p{
+	font-size: 1.2rem;
+	color: #baa675;
+}
+
+.join-content,.join-content > img{width: 100%;}
+.join-content ul{
+	width: 95%;
+	margin: 0 auto;
+}
+.join-content > ul > li {
+	width: 100%;
+	height: 45px;
+	border: 1px solid #baa674;
+	margin-bottom: 5%;
+}
+.join-content ul li span{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	
+}
+.join-content ul li .title{
+	width: 30%;
+	background: #baa674;
+	color: #fff;
+	line-height: 45px;
+}
+.join-content ul li .content{
+	width: 70%;
+	color: #000;
+	font-size: 0.7rem;
+	padding-top: 5px;
+}
+
+/*下载加盟手册*/
+.download-joinMaum p{
+	font-size: 1rem;
+	color: #baa675;
+}
+.download-joinMaum a{
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px 25px;
+	margin: 3px auto;
+	border-radius: 5px;
+	background: #baa675;
+	color: #fbfaf7;
+	font-size: 14px;
+}
+
+input{
+	-webkit-appearance: none;
+}
+
+.email-content{
+	width: 100%;
+	text-align: center;
+	padding-top: 3%;
+}
+.email-content h3{
+	color: #dadada;
+}
+.email-content .form-content{
+	width: 95%;
+	margin: 0 auto;
+	text-align: left;
+}
+.email-content .form-content > p:first-child{
+	padding: 2% 0;
+	border-bottom: 1px solid #d1c5aa;
+	font-size: 1rem;
+	color: #d1c5aa;
+}
+.email-content .form-content ul{
+	margin-top: 2%;
+}
+.email-content .form-content ul li{
+	float: left;
+	width: 100%;
+	margin-left: 2%;
+}
+.email-content .form-content ul li input{
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid #d1c5aa;
+	margin: 5px 0;
+	color: #BAA675;
+}
+.email-content .form-content .email-sub-info{
+	width: 100%;
+	margin: 5% auto;
+	text-align: center;
+	color: #baa675;
+}
+.email-content .form-content .email-sub-info a{
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 5px 55px;
+	margin: 2% auto;
+	border-radius: 5px;
+	background: #baa675;
+	color: #fbfaf7;
+	font-size: 14px;
+}
+
+
+/*实体展示*/
+.store-show,.store-show img{
+	width: 100%;
+}
+
+.showPic-wrap{width: 100%;margin: 0 auto;position: relative;}
+.swiper-container{
+	position: relative;
+	width: 100%;
+	height: 200px;
+}
+.showPic-wrap .arrow-left {
+  background: url(../images/mobile/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -35px;
+  width: 17px;
+  height: 30px;
+  z-index: 10;
+}
+.showPic-wrap .arrow-right {
+  background: url(../images/mobile/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -35px;
+  width: 17px;
+  height: 30px;
+  z-index: 10;
+}
+.content-slide {
+  padding: 20px;
+  color: #fff;
+}
+.swiper-container .pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:5px;
+  width: 100%;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #999;
+  box-shadow: 0px 1px 2px #555 inset;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+.swiper-slide img{width: 100%;}
+
+#tianjin,#shandong{
+	display: none;
+}
+.city-choice{margin: 3% 0;}
+.city-choice ul li{
+	float: left;
+	width: 14%;
+	text-align: center;
+	color: #B7A474;
+}
+
+/*底部导航*/
+.footer-content{
+	width: 100%;
+	min-height: 205px;
+	background: #b7a474;
+}
+.footer-content .footer-top{
+	width: 95%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	margin: 0 auto;
+}
+.footer-content .footer-top .ul-wrap{
+	padding: 20px auto;
+}
+.footer-content .footer-top .ul-wrap > li{
+	float: left;
+	width: 33.333%;
+	max-width: 300px;
+	min-height: 135px;
+	padding: 0 1%;
+	box-sizing: border-box;
+	text-align: center;
+	border-right: 1px solid #fff;
+	color: #fff;
+}
+
+.footer-content .footer-top .ul-wrap .third-li{
+	width: 40%;
+	padding: 0;
+	padding-left: 2%;
+}
+.footer-content .footer-top .ul-wrap .third-li > ul {
+	float: left;
+	margin-left: 3%;
+}
+.footer-content .footer-top .ul-wrap .third-li .footer-nav-wrap2 {
+	float: right;
+	margin-right: 10%;
+	margin-left: 0;
+}
+.footer-content .footer-top .ul-wrap .third-li .footer-nav-wrap2 li a {
+	text-align: center;
+}
+.footer-content .footer-top .ul-wrap .third-li .footer-nav-wrap2 li:first-child{text-align: left;padding-top: 5%;}
+.footer-content .footer-top .ul-wrap .contact-number{margin-top: 5%;}
+.footer-content .footer-top .ul-wrap .contact-number li img{
+	margin-right: 10px;
+}
+.footer-content .footer-top .ul-wrap .contact-number li{
+	text-align: left;
+	padding-bottom: 5%;
+} 
+.footer-content .footer-top .ul-wrap .footer-nav-wrap li,
+.footer-content .footer-top .ul-wrap .footer-nav-wrap2 li a{
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+.footer-content .footer-top .ul-wrap .footer-nav-wrap li a,
+.footer-content .footer-top .ul-wrap .footer-nav-wrap2 li a
+{color: #fff;}
+
+.footer-content .footer-bottom{
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	border-top: 1px solid #fff;
+	padding-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/*sub header*/
+/*.header-fixed{
+	width: 100%;
+    background: rgba(255,255,255,1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-font-smoothing: antialiased;
+    height: 50px;
+    box-shadow:0 3px 15px rgba(0, 0, 0, .3); 
+    display: none;
+}
+.header-fixed .header-nav{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.header-fixed .header-nav li{
+	float: left;
+	height: 100%;
+}
+.header-fixed .header-nav li.logo{
+	line-height: 50px;
+	width: 30%;
+}
+.header-fixed .header-nav li.nav-content{
+	border-bottom: 1px solid #000000;
+	height: 90%;
+}
+.header-fixed .header-nav li.logo img{width: 100%;}
+.header-fixed .header-nav li a{
+	display: inline-block;
+	text-align: center;
+	padding: 0 3px;
+	color: #000;
+	font-size: 0.8rem;
+	height: 100%;
+	width: 100%;
+}
+.header-fixed .header-nav li a .nav_en{
+	display: block;
+	font-size: 0.6rem;
+	color: #baa675;
+}
+.header-fixed .header-nav li center{margin-top: -15px;}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

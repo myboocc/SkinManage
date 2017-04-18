@@ -1,0 +1,78 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/tx 
+	  http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+      
+      <context:property-placeholder location="classpath:config.properties"/>
+      <!-- 数据源 -->
+      <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${driverClassName}"></property>
+      		<property name="url" value="${jdbc_url}"></property>
+			<property name="username" value="${jdbc_username}"></property>
+			<property name="password" value="${jdbc_password}"></property>
+			<!-- 连接池启动时的初始值 -->
+			<property name="initialSize" value="1"></property>
+			<!-- 连接池的最大值 -->
+			<property name="maxActive" value="500"></property>
+			<!-- 最大空闲值，当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxidle为止 -->
+			<property name="maxIdle" value="5"></property>
+			<!-- 最小空闲值，当空闲的连接数少于阀值时没连接池就会预申请去一些链接，以免洪峰来时来不及申请 -->
+			<property name="minIdle" value="1"></property>
+		</bean>
+		<!-- sqlsessionfactory -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<!-- 数据库连接池 -->
+			<property name="dataSource" ref="dataSource"></property>
+			<!-- 加载mybatis的全局配置文件 -->
+			<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+		</bean>
+		<!-- mapper扫描器 -->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<!-- 如果要扫描多个包，中间使用半角逗号隔开 -->
+			<property name="basePackage" value="it.skinmanage.mapper"></property>
+			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+		</bean>
+		
+		<!-- 配置事务管理器 -->
+	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 注解方式配置事物 -->
+	 <tx:annotation-driven transaction-manager="transactionManager" /> 
+
+	<!-- 拦截器方式配置事物 -->
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="append*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="edit*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="repair" propagation="REQUIRED" />
+
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="load*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="search*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="datagrid*" propagation="REQUIRED" read-only="true" />
+
+			<tx:method name="*" propagation="REQUIRED" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+      
+</beans>

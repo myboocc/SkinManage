@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SkinManage"
+  id="myeclipse.1489325879435"
+  context-root="/SkinManage"
+  j2ee-spec="5.0"
+  archive="SkinManage.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
