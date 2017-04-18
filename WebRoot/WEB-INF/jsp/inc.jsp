@@ -18,7 +18,7 @@
  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jslib/ueditor/themes/default/css/ueditor.css"/>
  <script type="text/javascript" src="${pageContext.request.contextPath}/jslib/ueditor/ueditor.config.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/jslib/ueditor/ueditor.all.js"></script>
- 
+ <!-- 初始化参数 -->
  <script type="text/javascript">
 	var basePath = "${pageContext.request.contextPath}";
  </script>
