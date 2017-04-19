@@ -10,15 +10,13 @@ $(function() {
 					title : '提示',
 					text : '数据处理中，请稍后....'
 				});
-				
-				var password = $('#password').val();
+				var content = UE.getEditor('content').getContent();
 				var result = true;
-				if(password == '') {
+				if(content == '') {
 					parent.$.messager.progress('close');
-					$.messager.alert('错误','密码不能为空!','error');
+					$.messager.alert('错误','文章标题或内容不能为空!','error');
 					result = false;
 				}
-				
 				return result;
 			},
 			success : function(result) {
@@ -28,11 +26,12 @@ $(function() {
 					parent.$.modalDialog.openner_dataGrid.datagrid('reload');//之所以能在这里调用到parent.$.modalDialog.openner_dataGrid这个对象，是因为user.jsp页面预定义好了
 					parent.$.modalDialog.handler.dialog('close');
 					$.messager.show({
-					title:'操作正确',
-					msg:result.msg,
-					timeout:2000,
-					showType:'slide'
-			});
+						title:'操作正确',
+						msg:result.msg,
+						timeout:2000,
+						showType:'slide'
+					});
+					ue.destroy();
 				} else {
 					parent.$.messager.alert('错误', result.msg, 'error');
 				}
@@ -44,6 +43,7 @@ $(function() {
 <div class="easyui-layout" data-options="fit:true,border:false">
 	<div data-options="region:'center',border:false" title="" style="overflow: hidden;padding: 10px 0 10px 10px;">
 		<form id="form" method="post">
+			<input type="hidden" value="${news.id }" name="id"/>
 			<table class="table table-hover table-condensed">
 				<tr>
 					<th>标题:</th>
@@ -52,14 +52,13 @@ $(function() {
 				<tr>
 					<th>内容:</th>
 					<td>
-						<!-- <input id="username" type="text" name="title" type="text" onblur="checkUsername();" onfocus="clearValue();"/>  <span id="usernameTip" style="color: red"></span> --> 
-						<!-- <textarea id="content" name="content"  style="width:650px; height:300px;">KindEditor</textarea> -->
+						<input type="hidden" value="${news.content }" id="tempContent"/>
 						<!--编辑器-->
 						<div style="width:100%;margin:20px auto 40px;">
 							<script type="text/plain" id="content" name="content" style="width:90%;height:350px;"></script>
 						</div>
 						<script type="text/javascript">
-					        var ue = UE.getEditor('content',{scaleEnabled:true, initialContent: "123132123"});
+					       var ue = UE.getEditor('content',{scaleEnabled:true, initialContent: $("#tempContent").val()});
 					   </script>
 					</td>
 				</tr>

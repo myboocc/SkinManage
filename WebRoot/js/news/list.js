@@ -51,6 +51,15 @@ function addNews() {
 				var f = parent.$.modalDialog.handler.find('#form');
 				f.submit();
 			}
+		}, 
+		{
+			text : '取消',
+			iconCls : 'icon-cancel',
+			handler : function() {
+				parent.$.modalDialog.handler.dialog('destroy');
+				parent.$.modalDialog.handler = undefined;
+				ue.destroy();
+			}
 		}]
 	});
 	
@@ -121,7 +130,17 @@ function editFun(id) {
 				var f = parent.$.modalDialog.handler.find('#form');
 				f.submit();
 			}
-		} ]
+		}, 
+		{
+			text : '取消',
+			iconCls : 'icon-cancel',
+			handler : function() {
+				parent.$.modalDialog.handler.dialog('destroy');
+				parent.$.modalDialog.handler = undefined;
+				console.log("xiaohui");
+				ue.destroy();
+			}
+		}]
 	});
 }
 

@@ -100,7 +100,7 @@
 							<script type="text/plain" id="content" name="content" style="width:90%;height:350px;"></script>
 						</div>
 						<script type="text/javascript">
-					        UE.getEditor('content',{scaleEnabled:true});
+					       var ue = UE.getEditor('content',{scaleEnabled:true});
 					   </script>
 					</td>
 				</tr>

@@ -4,7 +4,6 @@
 
 <mapper namespace="it.skinmanage.mapper.NewsDao"> <!--使用接口时的配置方法  -->
 
-<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"></cache> -->
 <!-- 为了返回list类型而定义的returnMap -->
 <resultMap type="News" id="resultListNews">
 	<id column="id" property="id"/>
@@ -22,9 +21,9 @@
 	select count(*) from news
 </select>
 
-<!-- 查询用户 -->
-<select id="getUser" parameterType="String" resultType="User">
-	select * from user where id = #{id}
+<!-- 查询新闻 -->
+<select id="getById" parameterType="String" resultType="News">
+	select * from news where id = #{id}
 </select>
 
 <!-- 查询用户名时候存在 -->
@@ -37,14 +36,14 @@
 	insert into news(title,content,postTime) values(#{title},#{content},#{postTime})  
 </insert>
 
-<!-- 删除用户 -->
+<!-- 删除新闻 -->
 <delete id="deleteUser" parameterType="String" >
 	delete from user where id = #{id}
 </delete>
 
-<!-- 更新用户 -->
-<update id="updateUser" parameterType="User">
-	update user set password = #{password} where id = #{id}
+<!-- 更新新闻 -->
+<update id="updateNews" parameterType="News">
+	update news set title = #{title} , content = #{content} where id = #{id}
 </update>
     
 </mapper>

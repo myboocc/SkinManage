@@ -12,7 +12,7 @@ public interface NewsDao {
 	public int addNews(News news);
 	
 	/**分页查找数据*/
-	public List<News> getNews(Map<String, Integer> map);
+	public List<News> getNews(Map<String, Object> map);
 	
 	/**查询所有新闻记录总数*/
 	public int getAllNewsNumbers();
@@ -23,11 +23,13 @@ public interface NewsDao {
 	/**根据用户id删除用户*/
 	public int deleteUser(String id);
 	
-	/**根据用户id查找用户*/
-	public User getUser(String id);
+	/**根据用户id查找新闻*/
+	public News getById(String id);
 	
-	/**修改用户*/
-	public int updateUser(User user);
+	/**修改新闻*/
+	public int updateNews(News news);
+
+
 	
 
 }

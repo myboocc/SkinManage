@@ -32,13 +32,11 @@ public class NewsService {
 		DataGrid dg = new DataGrid();
 		int page = pg.getPage();
 		int rows = pg.getRows();
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("pageSize", rows);   //页面的大小
 		map.put("curRow",(page-1)*rows);  //当前记录数
+		map.put("orderBy", "postTime");
 		List<News> news = newsDao.getNews(map);
-		for(News n : news){
-//			n.setPostTime(postTime);
-		}
 		dg.setRows(news);    //设置数据
 		dg.setTotal(Long.valueOf(newsDao.getAllNewsNumbers()));   //设置数据表格记录数
 		return dg;
@@ -50,8 +48,7 @@ public class NewsService {
 	 * @return
 	 */
 	public int updateNews(News news) {
-		// TODO Auto-generated method stub
-		return 0;
+		return newsDao.updateNews(news);
 	}
 
 	/**
@@ -60,8 +57,7 @@ public class NewsService {
 	 * @return
 	 */
 	public News getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return newsDao.getById(id);
 	}
 
 }
