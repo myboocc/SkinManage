@@ -9,7 +9,7 @@
 	var dataGrid;
 	$(function() {
 		dataGrid = $('#user').datagrid({
-			url:'${pageContext.request.contextPath}/user/getAllUsers',
+			url: basePath + '/user/getAllUsers',
 			nowrap : true,
 			idField : 'id',
 			pagination : true,
@@ -43,7 +43,7 @@
 		parent.$.modalDialog({
 			title : '添加用户',
 			width : 500,
-			href : '${pageContext.request.contextPath}/user/addUserPage',
+			href : basePath + '/user/addUserPage',
 			height : 300,
 			buttons : [ {
 				text : '添加',
@@ -72,7 +72,7 @@
 					}
 					$.ajax({
    					type: "POST",
-   					url: "${pageContext.request.contextPath}/user/batchDelete",
+   					url: basePath + "/user/batchDelete",
    					dataType:"json",
    					data:{
    						ids : ids.join(',')
@@ -113,7 +113,7 @@
 			title : '编辑用户',
 			width : 500,
 			height : 300,
-			href : '${pageContext.request.contextPath}/user/editPage?id=' + id,
+			href : basePath + '/user/editPage?id=' + id,
 			buttons : [ {
 				text : '编辑',
 				handler : function() {
@@ -141,7 +141,7 @@
 				});
 				$.ajax({
 	   				type: "POST",
-	   				url: "${pageContext.request.contextPath}/user/deleteUser?id="+id,
+	   				url: basePath + "/user/deleteUser?id="+id,
 	   				dataType:"json",
 	   				success: function(j){
 	     				if(j.success == true) {

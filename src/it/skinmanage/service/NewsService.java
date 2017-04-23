@@ -35,7 +35,7 @@ public class NewsService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("pageSize", rows);   //页面的大小
 		map.put("curRow",(page-1)*rows);  //当前记录数
-		map.put("orderBy", "postTime");
+		map.put("orderByClause", "postTime DESC");
 		List<News> news = newsDao.getNews(map);
 		dg.setRows(news);    //设置数据
 		dg.setTotal(Long.valueOf(newsDao.getAllNewsNumbers()));   //设置数据表格记录数
@@ -58,6 +58,15 @@ public class NewsService {
 	 */
 	public News getById(String id) {
 		return newsDao.getById(id);
+	}
+
+	/**
+	 * 根据id删除新闻
+	 * @param id
+	 * @return
+	 */
+	public int deleteById(String id) {
+		return newsDao.deleteById(id);
 	}
 
 }

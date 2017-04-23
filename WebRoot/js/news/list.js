@@ -26,9 +26,9 @@ $(function() {
 				align:'center',
 				formatter : function(value, row, index) {
 					var str = '';
-						str += $.formatString('<img onclick="editFun(\'{0}\');" src="{1}" title="编辑"/>', row.id, basePath + '/style/images/extjs_icons/pencil.png');
+						str += $.formatString('<img onclick="editFun(\'{0}\');" src="{1}" title="编辑"/>', row.id, serverUrl + '/style/images/extjs_icons/pencil.png');
 					str += '&nbsp;';
-						str += $.formatString('<img onclick="deleteFun(\'{0}\');" src="{1}" title="删除"/>', row.id, basePath + '/style/images/extjs_icons/cancel.png');
+						str += $.formatString('<img onclick="deleteFun(\'{0}\');" src="{1}" title="删除"/>', row.id, serverUrl + '/style/images/extjs_icons/cancel.png');
 					return str;
 				}
 			} 
@@ -46,6 +46,7 @@ function addNews() {
 		buttons : [{
 			text : '保存',
 			align:'center',
+			iconCls : 'icon-add',
 			handler : function() {
 				parent.$.modalDialog.openner_dataGrid = dataGrid;//因为添加成功之后，需要刷新这个dataGrid，所以先预定义好
 				var f = parent.$.modalDialog.handler.find('#form');
@@ -58,7 +59,6 @@ function addNews() {
 			handler : function() {
 				parent.$.modalDialog.handler.dialog('destroy');
 				parent.$.modalDialog.handler = undefined;
-				ue.destroy();
 			}
 		}]
 	});
@@ -125,6 +125,7 @@ function editFun(id) {
 		href : basePath + '/news/editNewsPage?id=' + id,
 		buttons : [ {
 			text : '保存',
+			iconCls : 'icon-add',
 			handler : function() {
 				parent.$.modalDialog.openner_dataGrid = dataGrid;//因为添加成功之后，需要刷新这个dataGrid，所以先预定义好
 				var f = parent.$.modalDialog.handler.find('#form');
@@ -137,8 +138,6 @@ function editFun(id) {
 			handler : function() {
 				parent.$.modalDialog.handler.dialog('destroy');
 				parent.$.modalDialog.handler = undefined;
-				console.log("xiaohui");
-				ue.destroy();
 			}
 		}]
 	});
@@ -152,7 +151,7 @@ function deleteFun(id) {
 	} else {//点击操作里面的删除图标会触发这个
 		dataGrid.datagrid('unselectAll').datagrid('uncheckAll');
 	}
-	parent.$.messager.confirm('询问', '您是否要删除当前用户？', function(b) {
+	parent.$.messager.confirm('询问', '您是否要删除该条新闻？', function(b) {
 		if (b) {
 			parent.$.messager.progress({
 				title : '提示',
@@ -160,8 +159,9 @@ function deleteFun(id) {
 			});
 			$.ajax({
    				type: "POST",
-   				url: basePath + "/user/deleteUser?id="+id,
+   				url: basePath + "/news/deleteNews",
    				dataType:"json",
+   				data:{"id":id},
    				success: function(j){
      				if(j.success == true) {
    						$.messager.show({

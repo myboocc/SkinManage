@@ -13,7 +13,7 @@
 
 <!-- 分页查询数据 -->
 <select id="getNews" resultMap="resultListNews" parameterType="java.util.Map">
-	select * from news limit #{curRow},#{pageSize}
+	select * from news order by ${orderByClause} limit #{curRow},#{pageSize}
 </select>
 
 <!-- 查询所有用户总数 -->
@@ -37,8 +37,8 @@
 </insert>
 
 <!-- 删除新闻 -->
-<delete id="deleteUser" parameterType="String" >
-	delete from user where id = #{id}
+<delete id="deleteById" parameterType="String" >
+	delete from news where id = #{id}
 </delete>
 
 <!-- 更新新闻 -->

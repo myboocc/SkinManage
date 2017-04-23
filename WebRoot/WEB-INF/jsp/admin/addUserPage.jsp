@@ -5,7 +5,7 @@ var nameBool;
 	$(function() {
 		parent.$.messager.progress('close');
 		$('#form').form({
-			url : '${pageContext.request.contextPath}/user/add',
+			url : basePath + '/user/add',
 			onSubmit : function() {
 				parent.$.messager.progress({
 					title : '提示',
@@ -55,7 +55,7 @@ var nameBool;
 			{
 				$.ajax({
    				type: "POST",
-   				url: "${pageContext.request.contextPath}/user/checkUsername",
+   				url: basePath + "/user/checkUsername",
    				dataType:"json",
    				data:$('#form').serialize(),
    				success: function(j){

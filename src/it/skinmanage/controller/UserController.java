@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author YMStudio
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/home/user")
 public class UserController extends BaseController {
 	
 	@Autowired

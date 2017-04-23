@@ -63,4 +63,11 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>	
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/home/*"/>
+			<bean class="it.skinmanage.interceptor.CheckPrivilegeInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 </beans>

@@ -29,6 +29,9 @@ public interface NewsDao {
 	/**修改新闻*/
 	public int updateNews(News news);
 
+	/**删除新闻*/
+	public int deleteById(String id);
+
 
 	
 

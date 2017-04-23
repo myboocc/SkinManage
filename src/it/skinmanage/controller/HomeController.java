@@ -11,6 +11,10 @@ public class HomeController extends BaseController{
 	public String index(){
 		return "jsp/home/index";
 	}
+	@RequestMapping("/login")
+	public String login(){
+		return "jsp/admin/login";
+	}
 	@RequestMapping("/north")
 	public String north(){
 		return "jsp/home/north";

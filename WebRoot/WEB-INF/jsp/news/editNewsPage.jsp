@@ -31,7 +31,6 @@ $(function() {
 						timeout:2000,
 						showType:'slide'
 					});
-					ue.destroy();
 				} else {
 					parent.$.messager.alert('错误', result.msg, 'error');
 				}
@@ -58,7 +57,8 @@ $(function() {
 							<script type="text/plain" id="content" name="content" style="width:90%;height:350px;"></script>
 						</div>
 						<script type="text/javascript">
-					       var ue = UE.getEditor('content',{scaleEnabled:true, initialContent: $("#tempContent").val()});
+							UE.delEditor('content');
+					        var ue = UE.getEditor('content',{scaleEnabled:true, initialContent: $("#tempContent").val()});
 					   </script>
 					</td>
 				</tr>

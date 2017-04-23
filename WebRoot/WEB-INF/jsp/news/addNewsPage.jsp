@@ -6,7 +6,7 @@
 	$(function() {
 		parent.$.messager.progress('close');
 		$('#form').form({
-			url : '${pageContext.request.contextPath}/news/add',
+			url : basePath + '/news/add',
 			onSubmit : function() {
 				parent.$.messager.progress({
 					title : '提示',
@@ -55,7 +55,7 @@
 			{
 				$.ajax({
    				type: "POST",
-   				url: "${pageContext.request.contextPath}/user/checkUsername",
+   				url: basePath + "/user/checkUsername",
    				dataType:"json",
    				data:$('#form').serialize(),
    				success: function(j){
@@ -93,14 +93,15 @@
 				<tr>
 					<th>内容:</th>
 					<td>
-						<!-- <input id="username" type="text" name="title" type="text" onblur="checkUsername();" onfocus="clearValue();"/>  <span id="usernameTip" style="color: red"></span> --> 
-						<!-- <textarea id="content" name="content"  style="width:650px; height:300px;">KindEditor</textarea> -->
 						<!--编辑器-->
 						<div style="width:100%;margin:20px auto 40px;">
-							<script type="text/plain" id="content" name="content" style="width:90%;height:350px;"></script>
+							<script type="text/plain" id="_editor" name="content" style="width:90%;height:350px;"></script>
 						</div>
 						<script type="text/javascript">
-					       var ue = UE.getEditor('content',{scaleEnabled:true});
+					       jQuery(function($) {
+							    UE.delEditor('_editor');
+							    var ue = UE.getEditor('_editor',{scaleEnabled:true});
+							})
 					   </script>
 					</td>
 				</tr>

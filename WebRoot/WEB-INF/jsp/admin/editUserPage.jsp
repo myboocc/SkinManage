@@ -4,7 +4,7 @@
 $(function() {
 		parent.$.messager.progress('close');
 		$('#form').form({
-			url : '${pageContext.request.contextPath}/user/editUser',
+			url : basePath + '/user/editUser',
 			onSubmit : function() {
 				parent.$.messager.progress({
 					title : '提示',

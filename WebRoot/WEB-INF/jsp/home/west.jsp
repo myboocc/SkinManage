@@ -43,8 +43,8 @@ var layout_west_tree;
 				<li>
 					<span>后台管理</span>
 					<ul>
-						<li data-options="attributes:{'url':'${pageContext.request.contextPath}/user/userManage'}"> <span>用户管理</span>  </li>
-						<li data-options="attributes:{'url':'${pageContext.request.contextPath}/news/newsManage'}"> <span>新闻管理</span>  </li>
+						<li data-options="attributes:{'url':'${pageContext.request.contextPath}/home/user/userManage'}"> <span>用户管理</span>  </li>
+						<li data-options="attributes:{'url':'${pageContext.request.contextPath}/home/news/newsManage'}"> <span>新闻管理</span>  </li>
 						<li> <span>账号管理</span> </li>
 					</ul>
 				</li>

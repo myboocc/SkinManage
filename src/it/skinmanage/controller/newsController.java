@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author YMStudio
  */
 @Controller
-@RequestMapping("/news")
+@RequestMapping("/home/news")
 public class newsController extends BaseController {
 	
 	@Autowired
@@ -104,6 +104,45 @@ public class newsController extends BaseController {
 	@RequestMapping(value="/getAllNews")
 	public DataGrid getAllNews(PageHelper pg) {
 		return newsService.getAllNews(pg);
+	}
+	
+	/**删除用户*/
+	@ResponseBody
+	@RequestMapping(value="/deleteNews")
+	public Json deleteNews(String id) {
+		int result = newsService.deleteById(id);
+		Json json = new Json();
+		if(result == 1) {
+			json.setMsg("新闻删除成功");
+			json.setSuccess(true);
+		} else {
+			json.setMsg("新闻删除失败");
+			json.setSuccess(false);
+		}
+		return json;
+	}
+	
+	/**
+	 * 批量删除新闻
+	 * @param ids
+	 *  ids ('0','1','2')
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/batchDelete")
+	public Json batchDelete(String ids) {
+		Json j = new Json();
+		if(ids != null && ids.length() > 0) {
+			for (String id : ids.split(",")) {
+				if (id != null) {
+					newsService.deleteById(id);
+				}
+			}
+			
+		}
+		j.setMsg("批量删除成功！");
+		j.setSuccess(true);
+		return j;
 	}
 	
 }
