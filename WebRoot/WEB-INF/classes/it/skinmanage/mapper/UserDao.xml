@@ -28,6 +28,11 @@
 </select>
 
 <!-- 查询用户名时候存在 -->
+<select id="login" parameterType="User" resultType="User">
+	select * from user where username = #{username} and password = #{password};
+</select>
+
+<!-- 查询用户名时候存在 -->
 <select id="checkUsername" parameterType="User" resultType="User">
 	select * from user where username = #{username};
 </select>

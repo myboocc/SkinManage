@@ -29,6 +29,9 @@ public interface UserDao {
 	
 	/**修改用户*/
 	public int updateUser(User user);
+
+	/**登录*/
+	public User login(User user);
 	
 
 }

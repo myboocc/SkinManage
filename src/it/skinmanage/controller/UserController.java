@@ -9,6 +9,7 @@ import it.skinmanage.service.UserService;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,23 +29,19 @@ public class UserController extends BaseController {
 	
 	@Autowired
 	private UserService userService;
-	
-	
 	/**
 	 * 用户登录
 	 * @param user
 	 * @return
 	 */
-	@ResponseBody
 	@RequestMapping(value="/login",method = RequestMethod.POST)
-	public Json login(User user) {
-		Json j = new Json();
-		if("cjy".equals(user.getUsername()) && "123".equals(user.getPassword())) {
-			
-		} else {
-			j.setMsg("用户名或密码错误");
+	public String login(User user,HttpSession session) {
+		User loginUser = userService.login(user);
+		if(loginUser != null){
+			session.setAttribute("loginUser", loginUser);
+			return "/jsp/home/index";
 		}
-		return j;
+		return "/jsp/admin/login";
 	}
 	
 	/**

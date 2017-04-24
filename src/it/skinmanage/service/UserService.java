@@ -58,4 +58,14 @@ public class UserService {
 	public int updateUser(User u) {
 		return userDao.updateUser(u);
 	}
+
+
+	/**
+	 * 登录
+	 * @param user
+	 * @return
+	 */
+	public User login(User user) {
+		return userDao.login(user);
+	}
 }
