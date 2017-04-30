@@ -344,6 +344,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    </div>
 			</div>
 			
+			<!--新闻模块-->
+			<ul class="grid">
+				<!-- <li class="grid__item grid__item--4">
+					<a href="" class="grid__link">
+						<h2 class="grid__title">Brooklyn put a bird on itBrooklyn put a bird on it</h2>
+						<p>Posted by David</p>
+					</a>
+				</li> -->
+			</ul>
+			
+			<section class="post">
+				<article class="post__wrapper">
+				</article>
+				<a href="" class="post__back">
+					<svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 11h5v-6h-5v6zm0 7h5v-6h-5v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5v-6h-5v6zm6-6v6h5v-6h-5z"/><path d="M0 0h24v24h-24z" fill="none"/>
+					</svg> 返回
+				</a>
+				<!-- <a href="" class="post__forw">
+					下一篇<svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M12 4l-1.41 1.41 5.58 5.59h-12.17v2h12.17l-5.58 5.59 1.41 1.41 8-8z"/></svg> 
+				</a> -->
+			</section>
+			
+			<div class="download-joinMaum" style="margin-bottom: 3%;">
+				<a href="javascript:;" id="addMore">点击加载更多</a>
+			</div>
+			
 			<div class="footer-content">
 				<div class="footer-top">
 					<ul class="ul-wrap clear">
@@ -400,13 +426,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</a>
 		</div>
 
-		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="jslib/jquery-1.8.3.js"></script>
 		<script src="js/jquery.easing.1.3.min.js"></script>
 		<script src="js/modernizr.custom.97074.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/libs_bd5c2.js"></script>
 		<script src="js/global_f7a426084d.js"></script>
 		<script src="js/page_9432c8a608.js"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/news.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.hoverdir.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/idangerous.swiper.min.js"></script>
 		<script>

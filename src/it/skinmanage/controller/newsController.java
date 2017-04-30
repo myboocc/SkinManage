@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -27,7 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/home/news")
-public class newsController extends BaseController {
+public class NewsController extends BaseController {
 	
 	@Autowired
 	private NewsService newsService;
@@ -62,10 +63,23 @@ public class newsController extends BaseController {
 		return "/jsp/news/editNewsPage";
 	}
 	
+	/**
+	 * 获取新闻信息
+	 * 
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/getNewsById")
+	public News getNewsById(String id) {
+		News news = newsService.getById(id);
+		return news;
+	}
+	
 	/**修改用户*/
 	@ResponseBody
 	@RequestMapping(value="/editNews")
 	public Json editNews(News news) {
+		System.out.println(news.getContent());
 		int result = newsService.updateNews(news);
 		Json j = new Json();
 		if(result == 1) {
@@ -106,6 +120,14 @@ public class newsController extends BaseController {
 		return newsService.getAllNews(pg);
 	}
 	
+//	/**ajax获取新闻*/
+	@ResponseBody
+	@RequestMapping(value="/loadNews")
+	public DataGrid loadNews(PageHelper pg,@RequestParam(value="pageSize", defaultValue="6") int pageSize) {
+		pg.setRows(pageSize);
+		return newsService.getAllNews(pg);
+	}
+	
 	/**删除用户*/
 	@ResponseBody
 	@RequestMapping(value="/deleteNews")
@@ -121,6 +143,7 @@ public class newsController extends BaseController {
 		}
 		return json;
 	}
+	
 	
 	/**
 	 * 批量删除新闻

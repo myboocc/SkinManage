@@ -95,13 +95,11 @@
 					<td>
 						<!--编辑器-->
 						<div style="width:100%;margin:20px auto 40px;">
-							<script type="text/plain" id="_editor" name="content" style="width:90%;height:350px;"></script>
+							<script type="text/plain" id="content" name="content" style="width:90%;height:350px;"></script>
 						</div>
 						<script type="text/javascript">
-					       jQuery(function($) {
-							    UE.delEditor('_editor');
-							    var ue = UE.getEditor('_editor',{scaleEnabled:true});
-							})
+					       UE.delEditor('content');
+						   var ue = UE.getEditor('content',{scaleEnabled:true});
 					   </script>
 					</td>
 				</tr>
