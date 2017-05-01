@@ -43,6 +43,16 @@ public class UserController extends BaseController {
 		}
 		return "/jsp/admin/login";
 	}
+	/**
+	 * 用户登录
+	 * @param user
+	 * @return
+	 */
+	@RequestMapping(value="/logout",method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "/jsp/admin/login";
+	}
 	
 	/**
 	 * 跳转用户管理界面

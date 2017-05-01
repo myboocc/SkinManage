@@ -17,10 +17,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="BLING LADY">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jslib/jquery-easyui-1.4.2/themes/icon.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/jslib/jquery-easyui-1.4.2/themes/gray/easyui.css"/>
-
+	<style type="text/css">
+		*{margin: 0;}
+	</style>
   </head>
   
   <body>
+  	<div style="margin-top: 15%;text-align: center;padding: 40px;background: #baa675">BLING LADY皮肤管理连锁机构</div>
     <div id="loginWin" class="easyui-window" title="登录" style="width:350px;height:188px;padding:5px;"
 	   minimizable="false" maximizable="false" resizable="false" collapsible="false">
 	    <div class="easyui-layout" fit="true">

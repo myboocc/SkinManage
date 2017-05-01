@@ -1,5 +1,4 @@
-var pageNum = 1;
-var pageSize = 6;
+
 $(function(){
 	
 	$("#header-nav li").hover(function(){
@@ -30,47 +29,9 @@ $(function(){
 	            
 	        });
 		}
-	})
+	});
 	
-	loadNews(pageNum);
 })
-
-//var bindActions = function() {
-//	item.on('click', zoom);
-//	backBtn.on('click', zoomout);
-//	nextBtn.on('click', nextPost);
-//};
-
-function loadNews(pageNum){
-	$.ajax({
-		type: "POST",
-        url:"home/news/loadNews",
-        data: {"page":pageNum},
-        success: function(data) {
-        	var newsList = data.rows;
-//        	console.log(newsList);
-        	if(newsList.length > 0){
-        		for(var i=0;i<newsList.length; i++){
-        			var html_tmp = '<li class="grid__item grid__item--4" data="'+newsList[i].id+'">'
-			    					+'<a href="javascript:;" class="grid__link" data="'+newsList[i].id+'">'
-			    					+'	<h2 class="grid__title">'+newsList[i].title+'</h2>'
-			    					+'	<p>BLING LADY</p>'
-			    					+'</a>'
-			    					+'</li>';
-        			$(".grid").append(html_tmp);
-        		}
-        		if(newsList.length < pageSize){
-        			$("#addMore").hide();
-        		}
-        	}else{
-        		//最后一页
-        	}
-        },
-        error: function(request) {
-            console.log("服务器出错了");
-        }
-	})
-}
 
 function checkForm(){
 	var result;

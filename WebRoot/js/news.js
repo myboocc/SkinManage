@@ -121,7 +121,6 @@ var ZoomGrid = (function() {
 	var bindActions = function() {
 //		$(document).on('click',item, zoom);
 		item.live('click', zoom);
-//		item.on('click', zoom);
 		backBtn.live('click', zoomout);
 		nextBtn.on('click', nextPost);
 	};
@@ -137,3 +136,42 @@ var ZoomGrid = (function() {
 }());
 
 ZoomGrid.init();
+
+var pageNum = 1;
+var pageSize = 6;
+$("#addMore").click(function(){
+	loadNews(++pageNum);
+});
+
+loadNews(pageNum);
+
+function loadNews(pageNum){
+	$.ajax({
+		type: "POST",
+        url:"home/news/loadNews",
+        data: {"page":pageNum},
+        success: function(data) {
+        	var newsList = data.rows;
+        	if(newsList.length > 0){
+        		for(var i=0;i<newsList.length; i++){
+        			var html_tmp = '<li class="grid__item grid__item--4" data="'+newsList[i].id+'">'
+			    					+'<a href="javascript:;" class="grid__link" data="'+newsList[i].id+'">'
+			    					+'	<h2 class="grid__title">'+newsList[i].title+'</h2>'
+			    					+'	<p>BLING LADY</p>'
+			    					+'</a>'
+			    					+'</li>';
+        			$(".grid").append(html_tmp);
+        		}
+        		if(newsList.length < pageSize){
+        			$("#addMore").hide();
+        		}
+        	}else{
+        		//最后一页
+        		$("#addMore").hide();
+        	}
+        },
+        error: function(request) {
+            console.log("服务器出错了");
+        }
+	})
+}

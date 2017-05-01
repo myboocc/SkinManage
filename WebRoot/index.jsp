@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link href="css/global_f7a4255f76.css" rel="stylesheet" type="text/css">
 		<link href="css/page_9432c0ef7f.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/news.css"/>
 		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css"/>
 
 		<script>
@@ -346,12 +347,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<!--新闻模块-->
 			<ul class="grid">
-				<!-- <li class="grid__item grid__item--4">
-					<a href="" class="grid__link">
-						<h2 class="grid__title">Brooklyn put a bird on itBrooklyn put a bird on it</h2>
-						<p>Posted by David</p>
-					</a>
-				</li> -->
 			</ul>
 			
 			<section class="post">
@@ -408,7 +403,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</ul>
 				</div>
 				<div class="footer-bottom">
-					<h2>BLING LADY 专业皮肤管理中心</h2>
+					<h2>BLING LADY 皮肤管理连锁机构</h2>
+					<h2 style="font-size: 12px;margin-top: 2%;">苏ICP备15051990号-2</h2>
 				</div>
 			</div>
 			

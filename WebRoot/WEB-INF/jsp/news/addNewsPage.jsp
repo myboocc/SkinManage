@@ -88,7 +88,7 @@
 			<table class="table table-hover table-condensed">
 				<tr>
 					<th>标题:</th>
-					<td><input id="title" type="text" name="title" type="text" onblur="checkNewsTitle();"/>  <span id="usernameTip" style="color: red"></span> </td>
+					<td><input id="title" type="text" name="title" type="text"/>  <span id="usernameTip" style="color: red"></span> </td>
 				</tr>
 				<tr>
 					<th>内容:</th>

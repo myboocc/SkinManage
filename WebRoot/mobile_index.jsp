@@ -15,6 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<title>BLING LADY 专业皮肤管理</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/mobile_index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/news.css"/>
 		<link rel="stylesheet" type="text/css" href="css/hvr_hang.css"/>
 		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css"/>
 		<script type="text/javascript">
@@ -29,7 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	}
 	    	cc();
 	    </script>
-	    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	    <script src="jslib/jquery-1.8.3.js"></script>
+	    <script src="js/news.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -272,6 +274,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    </div>
 			</div>
 			
+			<!--新闻模块-->
+			<ul class="grid">
+			</ul>
+			
+			<section class="post">
+				<article class="post__wrapper">
+				</article>
+				<a href="" class="post__back">
+					<svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 11h5v-6h-5v6zm0 7h5v-6h-5v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5v-6h-5v6zm6-6v6h5v-6h-5z"/><path d="M0 0h24v24h-24z" fill="none"/>
+					</svg> 返回
+				</a>
+				<!-- <a href="" class="post__forw">
+					下一篇<svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M12 4l-1.41 1.41 5.58 5.59h-12.17v2h12.17l-5.58 5.59 1.41 1.41 8-8z"/></svg> 
+				</a> -->
+			</section>
+			
+			<div class="download-joinMaum" style="margin-bottom: 3%;">
+				<a href="javascript:;" id="addMore">点击加载更多</a>
+			</div>
+			
 			<div class="footer-content">
 				<div class="footer-top">
 					<ul class="ul-wrap clear">
@@ -307,6 +329,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="footer-bottom">
 					<h2>BLING LADY 专业皮肤管理中心</h2>
+					<h2 style="font-size: 12px;margin-top: 2%;">苏ICP备15051990号-2</h2>
 				</div>
 			</div>
 			

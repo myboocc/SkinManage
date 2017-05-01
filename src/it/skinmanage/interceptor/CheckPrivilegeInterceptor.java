@@ -14,19 +14,19 @@ public class CheckPrivilegeInterceptor implements HandlerInterceptor{
 	public void afterCompletion(HttpServletRequest arg0,
 			HttpServletResponse arg1, Object arg2, Exception arg3)
 			throws Exception {
-		System.out.println("执行了  afterCompletion");
+//		System.out.println("执行了  afterCompletion");
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
 			Object arg2, ModelAndView arg3) throws Exception {
-		System.out.println("执行了  postHandle");
+//		System.out.println("执行了  postHandle");
 	}
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object arg2) throws Exception {
-		System.out.println("执行了  preHandle");
+//		System.out.println("执行了  preHandle");
 		request.setCharacterEncoding("utf-8");
 		User user = (User) request.getSession().getAttribute("loginUser"); //当前登录用户 
 		//如果未登录 转到登陆界面

@@ -47,11 +47,18 @@
 		});
 
 	}
+	
+	function logoutFun(arg){
+		window.location.href= basePath + '/user/logout';
+	}
 
 	
 </script>
 <div id="sessionInfoDiv" style="position: absolute; right: 0px; top: 0px;" class="alert alert-info">
-	<c:if test="${sessionInfo.id != null}">[<strong>${sessionInfo.name}</strong>]，欢迎你！您使用[<strong>${sessionInfo.ip}</strong>]IP登录！</c:if>
+	<c:if test="${loginUser.id != null}">[<strong>${loginUser.username}</strong>]，欢迎你！</c:if>
+</div>
+<div id="sessionInfoDiv" style="position: absolute; left: 20px; top: 0px;" class="alert alert-info">
+	<h1>BLING LADY皮肤管理连锁机构</h1>
 </div>
 
 <div style="position: absolute; right: 0px; bottom: 0px;">
@@ -78,14 +85,9 @@
 </div>
 <div id="layout_north_kzmbMenu" style="width: 100px; display: none;">
 	<div onclick="editCurrentUserPwd();">修改密码</div>
-	<div class="menu-sep"></div>
-	<div onclick="currentUserRole();">我的角色</div>
-	<div class="menu-sep"></div>
-	<div onclick="currentUserResource();">我的权限</div>
+	<!-- <div class="menu-sep"></div> -->
 </div>
 <div id="layout_north_zxMenu" style="width: 100px; display: none;">
-	<div onclick="logoutFun();">锁定窗口</div>
-	<div class="menu-sep"></div>
 	<div onclick="logoutFun();">重新登录</div>
 	<div onclick="logoutFun(true);">退出系统</div>
 </div>
