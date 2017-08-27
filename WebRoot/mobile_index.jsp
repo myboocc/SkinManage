@@ -75,35 +75,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul id="da-thumbs" class="da-thumbs">
 					<li>
 						<img src="images/trainproject/trainproject_01.jpg"/>
-						<div><span>超微小气泡</span></div>
+						<div><span>雪花焕肤</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_02.jpg"/>
-						<div><span>黄金焕肤</span></div>
+						<div><span>MTS皮肤管理</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_03.jpg"/>
-						<div><span>婴儿焕肤</span></div>
+						<div><span>小气泡深层清洁</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_04.jpg"/>
-						<div><span>毛孔隐形术</span></div>
+						<div><span>黄金焕肤</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_05.jpg"/>
-						<div><span>白雪公主</span></div>
+						<div><span>海藻矽针焕肤</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_06.jpg"/>
-						<div><span>无痛水光</span></div>
+						<div><span>新娘管理</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_07.jpg"/>
-						<div><span>艺人管理</span></div>
+						<div><span>樱花焕肤</span></div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_08.jpg"/>
-						<div><span>MTS皮肤管理</span></div>
+						<div><span>韩国半永久</span></div>
 					</li>
 				</ul>
 			</div>
@@ -157,6 +157,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="content">优秀加盟店奖励，出国考察，免费旅游或同等值物质奖励</span>
 					</li>
 				</ul>
+				<img src="images/mobile/6youshi.jpg"/>
+				<img src="images/mobile/huanjing.jpg"/>
 			</div>
 			
 			<div class="download-joinMaum">

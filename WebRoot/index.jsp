@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<title>BLING LADY 专业皮肤管理</title>
+		<title>皮肤管理和半永久培训招生</title>
 		<link rel="shortcut icon" href="images/favicon.ico" />
 		<meta name="keywords" content="皮肤管理">
 		<meta name="description" content="皮肤管理">
@@ -40,6 +40,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				window.location.href = '/notice/notSupport';
 			}
 		</script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?317d808f796c39bb0ef2a4181d5e1bb2";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
 	</head>
 
 	<body>
@@ -57,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<img src="images/logo.png" style="vertical-align: middle;margin: 0 10px;"/>
 					</li>
 					<li>
-						<a href="#join-content" class="topLink">加盟政策</a>
+						<a href="#join-content" class="topLink">公司优势</a>
 					</li>
 					<li>
 						<a href="#email-content" class="topLink">在线咨询</a>
@@ -69,8 +78,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li class="logo">
 						<img src="images/logo2.png" style="vertical-align: middle;"/>
 					</li>
+					<!-- <li>
+						<a href="#join-content" class="topLink"><span class="nav_en">JOIN</span>&nbsp;&nbsp;&nbsp;加入政策</a>
+						<center><hr style="width:60%;text-align:center;" /></center>
+					</li> -->
 					<li>
-						<a href="#join-content" class="topLink"><span class="nav_en">JOIN</span>&nbsp;&nbsp;&nbsp;加盟政策</a>
+						<a href="#join-content" class="topLink"><span class="nav_en">JOIN</span>&nbsp;&nbsp;&nbsp;公司环境</a>
 						<center><hr style="width:60%;text-align:center;" /></center>
 					</li>
 					<li>
@@ -100,6 +113,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 						<li >
 							<a href="javascript:;">
+								<img class="big_img" src="images/slide_02.jpg" >
+								<span class="slider_title" ></span>
+								<span class="slider_shadow"></span>
+							</a>
+						</li>
+						<li >
+							<a href="javascript:;">
 								<img class="big_img" src="images/slide_03.jpg" >
 								<span class="slider_title" ></span>
 								<span class="slider_shadow"></span>
@@ -108,6 +128,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li >
 							<a href="javascript:;">
 								<img class="big_img" src="images/slide_04.jpg" >
+								<span class="slider_title" ></span>
+								<span class="slider_shadow"></span>
+							</a>
+						</li>
+						<li >
+							<a href="javascript:;">
+								<img class="big_img" src="images/slide_05.jpg" >
 								<span class="slider_title" ></span>
 								<span class="slider_shadow"></span>
 							</a>
@@ -130,44 +157,84 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="thinking">
 					<img src="images/thinking.jpg" />
 				</div>
+				<!-- 联系电话 -->
+				<div id="LianXiDianHua">
+					<img src="images/lianxidianhua.jpg" />
+				</div>
 				<div id="trainproject">
 					<img src="images/trainproject.jpg"/>
 				</div>
 			</div>
+			
 			<!-- 项目培训 -->
 			<div class="project-content clear">
 				<ul id="da-thumbs" class="da-thumbs">
 					<li>
 						<img src="images/trainproject/trainproject_01.jpg"/>
-						<div><span>超微小气泡</span></div>
+						<div>
+							<span>雪花焕肤</span>
+							<span class="desc">
+								雪花焕肤通过雪花面膜补充皮肤的胶原蛋白，紧致收缩毛孔，能深层美白淡化黑色素，治疗一次就能看到红肿的痘印淡化，让沉淀的小黑斑和黑痘印也能迅速瓦解，焕活美白效果立现。
+							</span>
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_02.jpg"/>
-						<div><span>黄金焕肤</span></div>
+						<div>
+							<span>皮肤管理</span>
+							<!-- <span class="desc">
+								MTS皮肤管理又称为微针疗法或者微针疗法美容。其应用原理是经由刺激皮肤真皮层的胶原蛋白增生，不会破坏皮肤表皮层，从而唤醒以及提升肌肤的再生功能。
+							</span> -->
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_03.jpg"/>
-						<div><span>婴儿焕肤</span></div>
+						<div>
+							<span>小气泡深层清洁</span>
+							<span class="desc">
+								超微小气泡是通过真空负压形成真空回路，将超微小气泡和营养液充分结合，通过特殊设计的小螺旋形洗头直接作用于皮肤，且能保持微小气泡长时间接触皮肤，促进剥离作用...
+							</span>
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_04.jpg"/>
-						<div><span>毛孔隐形术</span></div>
+						<div>
+							<span>黄金焕肤</span>
+							<span class="desc">
+								黄金焕肤是指利用黄金的传导原理，让美容的有效成分更快更深入传达到皮肤，起到更好的抗衰老作用。
+							</span>
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_05.jpg"/>
-						<div><span>白雪公主</span></div>
+						<div>
+							<span>海藻焕肤</span>
+							<!-- <span class="desc">
+								海藻矽针焕肤是利用海藻矽针进入表皮深层，启动表皮皮肤的微循环，让老化的角质层自然的剥除。
+							</span> -->
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_06.jpg"/>
-						<div><span>无痛水光</span></div>
+						<div>
+							<span>新娘管理</span>
+							<span class="desc">
+								新娘管理是针对准新娘进行的婚前皮肤保养，通过充分补水，收缩毛孔；深层美白，激活胶原蛋白等方式逆转肌龄，让新娘在婚礼呈现出最美的一面。
+							</span>
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_07.jpg"/>
-						<div><span>艺人管理</span></div>
+						<div>
+							<span>樱花焕肤</span>
+							<span class="desc">
+								樱花焕肤利用樱花的抗氧化性，有效对抗黑色素沉淀，起到改善暗沉肤色的作用。
+							</span>
+						</div>
 					</li>
 					<li>
 						<img src="images/trainproject/trainproject_08.jpg"/>
-						<div><span>MTS皮肤管理</span></div>
+						<div><span>韩国</span></div>
 					</li>
 				</ul>
 			</div>
@@ -178,69 +245,86 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			
 			<div class="join-content" id="join-content">
-				<img src="images/join/join.jpg"/>
+				<!-- <img src="images/join/join.jpg"/> -->
 				<ul class="clear">
 					<li>
 						<img src="images/join/join_01.jpg"/>
-						<p>统一品牌形象</p>
-						<img class="describe" src="images/join/join_01.png"/>
+						<!-- <p>统一品牌形象</p>
+						<img class="describe" src="images/join/join_01.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/2-1.png"/>
-						<p>提供专业培训</p>
-						<img class="describe" src="images/join/2-2.png"/>
+						<!-- <p>提供专业培训</p>
+						<img class="describe" src="images/join/2-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/3-1.png"/>
-						<p>专属渠道</p>
-						<img class="describe" src="images/join/3-2.png"/>
+						<!-- <p>专属渠道</p>
+						<img class="describe" src="images/join/3-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/4-1.png"/>
-						<p>资源共享</p>
-						<img class="describe" src="images/join/4-2.png"/>
+						<!-- <p>资源共享</p>
+						<img class="describe" src="images/join/4-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/5-1.png"/>
-						<p>宣传推广扶持</p>
-						<img class="describe" src="images/join/5-2.png"/>
+						<!-- <p>宣传推广扶持</p>
+						<img class="describe" src="images/join/5-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/6-1.png"/>
-						<p>“新店活动”支持</p>
-						<img class="describe" src="images/join/6-2.png"/>
+						<!-- <p>“新店活动”支持</p>
+						<img class="describe" src="images/join/6-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/7-1.png"/>
-						<p>整店输出模式</p>
-						<img class="describe" src="images/join/7-2.png"/>
+						<!-- <p>整店输出模式</p>
+						<img class="describe" src="images/join/7-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/8-1.png"/>
-						<p>会员增值服务</p>
-						<img class="describe" src="images/join/8-2.png"/>
+						<!-- <p>会员增值服务</p>
+						<img class="describe" src="images/join/8-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/9-1.png"/>
-						<p>特别续航支持</p>
-						<img class="describe" src="images/join/9-2.png"/>
+						<!-- <p>特别续航支持</p>
+						<img class="describe" src="images/join/9-2.png"/> -->
 					</li>
 					<li>
 						<img src="images/join/10-1.png"/>
-						<p>鼓励政策</p>
-						<img class="describe" src="images/join/10-2.png"/>
+						<!-- <p>鼓励政策</p>
+						<img class="describe" src="images/join/10-2.png"/> -->
 					</li>
 				</ul>
 			</div>
 			
 			<div class="download-joinMaum">
 				<p>MORE</p>
-				<a href="user/download?fileName=BLINGLADY_JoinManual.pdf">点击下载加盟手册</a>
+				<a href="user/download?fileName=BLINGLADY_JoinManual.pdf">点击下载手册</a>
 				<p style="margin-top: 5px;"><img src="images/downloadicon.png"/></p>
 			</div>
 			
+			<div class="youshi">
+				<div id="youshi">
+					<img src="images/youshi.jpg" />
+				</div>
+			</div>
+			<div class="lianxiwomen">
+				<div id="lianxiwomen">
+					<img src="images/lianxiwomen.jpg" />
+				</div>
+			</div>
+			<!-- 教学环境 -->
+			<div class="jiaoXueHuanjing">
+				<div id="jiaoXueHuanjing">
+					<img src="images/huanjing.jpg" />
+				</div>
+			</div>
+			
 			<div class="email-content" id="email-content">
-				<h1>发送您的加盟信息给我们</h1>
+				<h1>发送您的信息给我们</h1>
 				<h3>SEND YOUR INFORMATION TO US</h3>
 				<h1><img src="images/email.png"/></h1>
 				<form action="user/sendEmail" method="post" id="subForm">
@@ -382,7 +466,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li><a href="javascript:;">网站首页</a></li>
 								<li><a href="javascript:;">品牌理念</a></li>
 								<li><a href="javascript:;">培训项目</a></li>
-								<li><a href="javascript:;">加盟政策</a></li>
+								<li><a href="javascript:;">公司优势</a></li>
 							</ul>
 							<ul class="contactus">
 								<li>联系我们</li>
@@ -404,6 +488,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="footer-bottom">
 					<h2>BLING LADY 皮肤管理连锁机构</h2>
+					<h3>南京朵爵商贸有限公司</h3>
+					<h3>江苏省南京市六合区金宁广场写字楼2304</h3>
 					<h2 style="font-size: 12px;margin-top: 2%;">苏ICP备15051990号-2</h2>
 				</div>
 			</div>

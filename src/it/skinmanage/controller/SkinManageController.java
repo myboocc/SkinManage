@@ -1,13 +1,22 @@
 package it.skinmanage.controller;
 
+import it.skinmanage.util.MailUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.MessageFormat;
 import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message.RecipientType;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,7 +31,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import cn.itcast.mail.Mail;
-import cn.itcast.mail.MailUtils;
 
 @Controller
 @RequestMapping("/user")
@@ -56,7 +64,7 @@ public class SkinManageController{
 		 * 创建Mail对象
 		 */
 		String from = prop.getProperty("from");
-		String to = "583087977@qq.com";
+		String to = prop.getProperty("to");
 		String subject = prop.getProperty("subject");
 		String content = MessageFormat.format(prop.getProperty("content"), name,age,city,phone,wechat);
 		Mail mail = new Mail(from, to, subject, content);
@@ -70,11 +78,9 @@ public class SkinManageController{
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		System.out.println("发送成功");
-		String json = "{'status':'ok','content':'成功'}";
-    	JSONObject jsonObj = new JSONObject(json);
-    	out.print(jsonObj);
-		
+		System.out.println("发送成功" + content);
+		String result = "发送成功";
+    	out.print(result);
 	}
 	
 	@RequestMapping("download")    
